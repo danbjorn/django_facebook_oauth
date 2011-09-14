@@ -12,7 +12,7 @@ def login(request):
     args = {
         'client_id': settings.FACEBOOK_APP_ID,
         'scope': settings.FACEBOOK_SCOPE,
-        'redirect_uri': request.build_absolute_uri('/facebook/authentication_callback'),
+        'redirect_uri': request.build_absolute_uri(reverse('authentication_callback')),
     }
     return HttpResponseRedirect('https://www.facebook.com/dialog/oauth?' + urllib.urlencode(args))
 
